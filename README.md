@@ -1,11 +1,11 @@
 # Snowflake Analytics Dashboard
 
-A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data analysis with Google OAuth authentication, featuring production-ready queries and advanced visualizations.
+A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data analysis with Google OAuth authentication featuring production-ready queries and advanced visualizations.
 
 ## Key Features
 
 ### Authentication
-- Google OAuth 2.0 integration with PKCE security
+- Google OAuth 2.0 integration
 - UI-based credential capture - no environment file configuration needed
 - External browser authentication for Snowflake
 - Session management with secure credential storage
@@ -138,8 +138,6 @@ A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data
 ### System Requirements
 - Python 3.8 or higher
 - pip package manager
-- Git (for cloning the repository)
-- Modern web browser (Chrome, Firefox, Safari, Edge)
 
 ### Installation Guide
 
