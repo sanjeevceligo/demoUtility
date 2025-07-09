@@ -16,9 +16,9 @@ def test_connection():
     
     # User's credentials
     connection_params = {
-        'account': 'NSQAUFD-UUA36379',
-        'user': 'sanjeev.mishra@celigo.com',
-        'password': 'Rinku@0120',
+        'account': '',
+        'user': '',
+        'password': '',
         'database': 'DATA_ROOM',
         'schema': 'MONGODB',
         'role': 'PRODUCT_ANALYST',

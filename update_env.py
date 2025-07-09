@@ -12,8 +12,8 @@ def update_env_file():
     
     # Your working Snowflake configuration
     config = {
-        'SNOWFLAKE_ACCOUNT': 'NSQAUFD-UUA36379',
-        'SNOWFLAKE_USERNAME': 'sanjeev.mishra@celigo.com',
+        'SNOWFLAKE_ACCOUNT': '',
+        'SNOWFLAKE_USERNAME': '',
         'SNOWFLAKE_DATABASE': 'DATA_ROOM',
         'SNOWFLAKE_SCHEMA': 'MONGODB',
         'SNOWFLAKE_AUTHENTICATOR': 'snowflake',
