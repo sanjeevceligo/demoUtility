@@ -122,6 +122,17 @@ A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data
 - Session State Management for user experience
 - Error Handling with graceful fallbacks
 
+![Screenshot 2025-06-30 at 3 33 51 PM](https://github.com/user-attachments/assets/102417b5-4065-4c1d-af9c-d5126e09837a)
+![Screenshot 2025-06-30 at 3 33 04 PM](https://github.com/user-attachments/assets/7964d883-f070-4ad2-ac43-05298b41170a)
+![Screenshot 2025-06-30 at 3 32 32 PM](https://github.com/user-attachments/assets/b1a2c418-a82d-479d-88e4-51619eac165d)
+![Screenshot 2025-06-30 at 3 31 24 PM](https://github.com/user-attachments/assets/ffc9e956-76fb-4e38-bdd9-3c800e11d531)
+![Screenshot 2025-06-30 at 3 30 46 PM](https://github.com/user-attachments/assets/bf71f530-7b09-4435-a3d0-f1fea7ef3b17)
+![Screenshot 2025-06-30 at 3 30 21 PM](https://github.com/user-attachments/assets/957a74ae-dc86-4f67-92f9-d5d98a8712ea)
+![Screenshot 2025-06-30 at 3 29 53 PM](https://github.com/user-attachments/assets/25f933d0-a422-4bb0-bc26-d89e4e853d52)
+![Screenshot 2025-06-30 at 3 29 24 PM](https://github.com/user-attachments/assets/b2919fcd-ea43-4cd0-82dc-2443b58c41bf)
+![Screenshot 2025-06-30 at 3 28 51 PM](https://github.com/user-attachments/assets/006f3222-fa7a-4079-9e66-3b2c5971e52e)
+![Screenshot 2025-06-30 at 3 28 34 PM](https://github.com/user-attachments/assets/76652b43-0671-4202-8f17-8572d3545556)
+
 ## Getting Started
 
 ### System Requirements
