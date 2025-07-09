@@ -239,6 +239,50 @@ python3 -m streamlit run app.py
 ```
 
 ---
+### Frontend & UI Framework
+- **Streamlit** `1.29.0` - Main web application framework for creating interactive dashboards
+- **Plotly** `5.17.0` - Interactive data visualizations (charts, graphs, plots)
+- **Altair** `5.2.0` - Statistical data visualization library
+- **Streamlit Extensions**:
+  - `streamlit-lottie` - Animated graphics and micro-interactions
+  - `streamlit-elements` - Enhanced UI components
+  - `streamlit-extras` - Additional UI utilities and widgets
+  - `streamlit-option-menu` - Professional navigation menus
+  - `streamlit-card` - Card-based UI components
+  - `streamlit-aggrid` - Advanced data grid functionality
+
+### Backend & Database
+- **Python** `3.8+` - Core programming language
+- **Snowflake** - Cloud data warehouse platform
+- **snowflake-connector-python** `3.6.0` - Official Snowflake Python connector
+- **Pandas** `2.1.4` - Data manipulation and analysis library
+- **NumPy** `1.24.3` - Numerical computing library
+
+### Authentication & Security
+- **Google OAuth 2.0** - User authentication with PKCE security
+- **Snowflake Authentication** - Database connection security
+- **Session Management** - Secure credential storage and session handling
+- **External Browser Authentication** - Enhanced security for Snowflake connections
+
+### Data Science & Analytics
+- **Scikit-learn** `≥1.3.0` - Machine learning and data analysis
+- **SciPy** `≥1.11.0` - Scientific computing and statistical analysis
+- **Seaborn** `≥0.12.0` - Statistical data visualization
+- **Matplotlib** `≥3.7.0` - Comprehensive plotting library
+- **Bokeh** `≥3.0.0` - Advanced interactive visualizations
+- **NetworkX** `≥2.8.8` - Network analysis and graph theory
+
+### Configuration & Deployment
+- **python-dotenv** `1.0.0` - Environment variable management
+- **OpenPyXL** `3.1.2` - Excel file processing and export
+- **Shell Scripts** - Automated deployment and startup scripts
+- **Git** - Version control and collaboration
+
+### Development Tools
+- **Virtual Environment** - Python environment isolation
+- **Requirements Management** - Dependency tracking and installation
+- **Configuration Files** - Streamlit and application settings
+- **Logging** - Application monitoring and debugging
 
 ## Troubleshooting
 
