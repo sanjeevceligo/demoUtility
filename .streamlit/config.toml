@@ -1,0 +1,10 @@
+[logger]
+level = "info"
+
+[server]
+headless = false
+enableCORS = true
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
