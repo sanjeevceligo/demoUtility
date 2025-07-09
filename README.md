@@ -139,7 +139,6 @@ A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data
 - Python 3.8 or higher
 - pip package manager
 - Git (for cloning the repository)
-- Active internet connection for Snowflake access
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
 ### Installation Guide
