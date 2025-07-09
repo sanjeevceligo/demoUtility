@@ -187,6 +187,77 @@ RICH_CSS = """
         height: 2px;
         background: rgba(255,255,255,0.3);
     }
+
+    /* Professional Authentication Styling */
+    .professional-success-notification {
+        background: linear-gradient(145deg, rgba(5, 150, 105, 0.1), rgba(16, 185, 129, 0.05));
+        border: 2px solid rgba(5, 150, 105, 0.3);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(5, 150, 105, 0.2);
+        animation: slideInScale 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .professional-success-notification::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        animation: shimmer 2s ease-in-out;
+    }
+
+    .success-icon {
+        font-size: 3rem;
+        min-width: 60px;
+        text-align: center;
+        animation: bounce 1s ease-in-out;
+    }
+
+    .success-content h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #059669;
+    }
+
+    .success-content p {
+        margin: 0;
+        color: #065f46;
+        font-weight: 500;
+    }
+
+    @keyframes slideInScale {
+        from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+        40%, 43% { transform: translate3d(0,-8px,0); }
+        70% { transform: translate3d(0,-4px,0); }
+        90% { transform: translate3d(0,-2px,0); }
+    }
 </style>
 """
 
@@ -378,15 +449,15 @@ class GoogleOAuthAuthenticator:
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-                    <h4 style="color: white;">Seamless Integration</h4>
-                    <p style="color: rgba(255,255,255,0.8);">Automatically connects to your Snowflake instance</p>
+                    <div class="feature-icon">⚡</div>
+                    <h4 style="color: white;">Lightning Fast</h4>
+                    <p style="color: rgba(255,255,255,0.8);">Optimized performance with real-time analytics</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h4 style="color: white;">Enterprise Security</h4>
-                    <p style="color: rgba(255,255,255,0.8);">Bank-level security with OAuth 2.0 + PKCE</p>
+                    <div class="feature-icon">🎨</div>
+                    <h4 style="color: white;">Beautiful Interface</h4>
+                    <p style="color: rgba(255,255,255,0.8);">Professional-grade UI designed for productivity</p>
                 </div>
             </div>
         </div>
@@ -530,8 +601,17 @@ class GoogleOAuthAuthenticator:
             }
             
             st.session_state.auth_step = 'snowflake_link'
-            st.success("✅ Google authentication successful!")
-            st.balloons()
+            
+            # Professional success notification
+            st.markdown("""
+            <div class="professional-success-notification">
+                <div class="success-icon">✅</div>
+                <div class="success-content">
+                    <h3>Authentication Successful</h3>
+                    <p>Google OAuth 2.0 verification completed</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
             
             # Auto-advance to Snowflake connection
             time.sleep(2)
@@ -581,8 +661,16 @@ class GoogleOAuthAuthenticator:
                 from snowflake_connector import SnowflakeConnector
                 connector = SnowflakeConnector()
                 if connector.connect():
-                    st.success("✅ Snowflake connection verified!")
-                    st.balloons()
+                    # Professional connection success
+                    st.markdown("""
+                    <div class="professional-success-notification">
+                        <div class="success-icon">🚀</div>
+                        <div class="success-content">
+                            <h3>Connection Established</h3>
+                            <p>Snowflake connection verified successfully</p>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
                 else:
                     st.warning("⚠️ Authentication saved but connection test failed")
             except Exception as e:

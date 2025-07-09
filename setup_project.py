@@ -175,7 +175,7 @@ def display_next_steps():
     print("   • Check logs/ directory for detailed error information")
     
     print("\n🌟 Features Available:")
-    print("   • Executive Dashboard with real-time metrics")
+    print("   • Customer Data Analytics with real-time metrics")
     print("   • Dev & QA Hub with system analytics")
     print("   • Live Monitoring with performance tracking")
     print("   • Query Builder with 50+ production queries")

@@ -25,322 +25,226 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Enhanced CSS for professional E2E team dashboard
+# Ultra-Professional CSS with Advanced Effects
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    .main > div {
-        padding-top: 2rem;
-    }
-    
-    /* Professional color scheme */
-    :root {
-        --primary-color: #2563eb;
-        --secondary-color: #10b981;
-        --accent-color: #f59e0b;
-        --danger-color: #ef4444;
-        --warning-color: #f97316;
-        --success-color: #059669;
-        --info-color: #0ea5e9;
-        --dark-bg: #1f2937;
-        --light-bg: #f8fafc;
-        --card-bg: #ffffff;
-        --text-primary: #111827;
-        --text-secondary: #6b7280;
-        --border-color: #e5e7eb;
-    }
-    
-    /* Professional header */
-    .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        color: white;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .header-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .header-subtitle {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        font-weight: 400;
-    }
-    
-    /* Professional KPI cards */
-    .kpi-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-    }
-    
-    .kpi-card {
-        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-        padding: 1.5rem;
-        border-radius: 16px;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .kpi-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    }
-    
-    .kpi-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    
-    .kpi-title {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--text-secondary);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 0.5rem;
-    }
-    
-    .kpi-value {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: 0.5rem;
-        line-height: 1;
-    }
-    
-    .kpi-change {
-        font-size: 0.875rem;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    
-    .kpi-change.positive {
-        color: var(--success-color);
-    }
-    
-    .kpi-change.negative {
-        color: var(--danger-color);
-    }
-    
-    .kpi-change.neutral {
-        color: var(--text-secondary);
-    }
-    
-    /* Professional tabs */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 0.5rem;
-        background-color: #f8fafc;
-        padding: 0.5rem;
-        border-radius: 12px;
-        border: 1px solid #e5e7eb;
-    }
-    
-    .stTabs [data-baseweb="tab"] {
-        background-color: transparent;
-        border-radius: 8px;
-        padding: 0.75rem 1.5rem;
-        font-weight: 500;
-        transition: all 0.2s ease;
-        border: none;
-    }
-    
-    .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, var(--primary-color), var(--info-color));
-        color: white !important;
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-    }
-    
-    /* Professional sidebar */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #1f2937 0%, #374151 100%);
-    }
-    
-    .css-1d391kg .css-1v0mbdj {
-        color: white;
-    }
-    
-    /* Professional metrics */
-    .metric-row {
-        display: flex;
-        gap: 1rem;
-        margin: 1rem 0;
-    }
-    
-    .metric-card {
-        flex: 1;
-        background: var(--card-bg);
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        transition: all 0.3s ease;
-    }
-    
-    .metric-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
-    
-    .metric-card.success {
-        border-left: 4px solid var(--success-color);
-    }
-    
-    .metric-card.warning {
-        border-left: 4px solid var(--warning-color);
-    }
-    
-    .metric-card.danger {
-        border-left: 4px solid var(--danger-color);
-    }
-    
-    .metric-card.info {
-        border-left: 4px solid var(--info-color);
-    }
-    
-    /* Professional charts */
-    .chart-container {
-        background: var(--card-bg);
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        margin: 1rem 0;
-    }
-    
-    .chart-title {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    /* Professional buttons */
-    .stButton > button {
-        background: linear-gradient(135deg, var(--primary-color), var(--info-color));
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 0.75rem 1.5rem;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
-    }
-    
-    /* Professional alerts */
-    .alert {
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        margin: 1rem 0;
-        font-weight: 500;
-        border-left: 4px solid;
-    }
-    
-    .alert.success {
-        background-color: #ecfdf5;
-        border-color: var(--success-color);
-        color: #065f46;
-    }
-    
-    .alert.warning {
-        background-color: #fffbeb;
-        border-color: var(--warning-color);
-        color: #92400e;
-    }
-    
-    .alert.danger {
-        background-color: #fef2f2;
-        border-color: var(--danger-color);
-        color: #991b1b;
-    }
-    
-    .alert.info {
-        background-color: #eff6ff;
-        border-color: var(--info-color);
-        color: #1e40af;
-    }
-    
-    /* Professional data tables */
-    .dataframe {
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    
-    .dataframe th {
-        background: var(--light-bg);
-        font-weight: 600;
-        color: var(--text-primary);
-        padding: 0.75rem;
-        border-bottom: 2px solid var(--border-color);
-    }
-    
-    .dataframe td {
-        padding: 0.75rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    /* Status indicators */
-    .status-indicator {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 12px;
-        font-size: 0.875rem;
-        font-weight: 500;
-    }
-    
-    .status-indicator.online {
-        background-color: #dcfce7;
-        color: #16a34a;
-    }
-    
-    .status-indicator.offline {
-        background-color: #fef2f2;
-        color: #dc2626;
-    }
-    
-    .status-indicator.warning {
-        background-color: #fefce8;
-        color: #ca8a04;
-    }
-    
-    /* Hide Streamlit branding for professional look */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    .stDeployButton {display:none;}
-    
-    /* Professional loading */
-    .stSpinner > div {
-        border-top-color: var(--primary-color) !important;
-    }
+/* Enhanced glassmorphism with animations */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+    25% { background: linear-gradient(135deg, #764ba2 0%, #f093fb 50%, #667eea 100%); }
+    50% { background: linear-gradient(135deg, #f093fb 0%, #667eea 50%, #764ba2 100%); }
+    75% { background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #764ba2 100%); }
+    100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+}
+
+/* Ultra-modern glassmorphism cards */
+.metric-card, .analytics-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:before, .analytics-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.metric-card:hover:before, .analytics-card:hover:before {
+    left: 100%;
+}
+
+.metric-card:hover, .analytics-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.6);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse effect for metrics */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+}
+
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+/* Advanced button styling */
+.stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.stButton > button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.stButton > button:hover:before {
+    left: 100%;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Professional headers */
+.main-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-title {
+    font-size: 3.5em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.header-subtitle {
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Enhanced sidebar */
+.css-1d391kg {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Advanced data visualizations */
+.stPlotlyChart {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Loading states */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: loading 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Success notifications */
+.success-notification {
+    background: rgba(40, 167, 69, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(40, 167, 69, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Professional tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-title { font-size: 2.5em; }
+    .header-subtitle { font-size: 1.1em; }
+    .metric-card { padding: 15px; margin: 10px 0; }
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -360,9 +264,14 @@ class SnowflakeDashboard:
             
         try:
             self.connector = get_snowflake_connector()
+            # Don't test connection on init to avoid blocking the app startup
+            # Connection will be tested when actually needed
             self.has_connector = True
+            self.demo_mode = False
         except:
-            pass
+            self.connector = None
+            self.has_connector = False
+            self.demo_mode = True
     
     def run(self):
         """Main application entry point"""
@@ -375,7 +284,7 @@ class SnowflakeDashboard:
         self._show_sidebar()
         
         # Main content area based on selected page
-        current_page = st.session_state.get('current_page', '📈 Executive Dashboard')
+        current_page = st.session_state.get('current_page', '📊 Customer Data Analytics')
         
         # Core Analytics Pages
         if current_page == '🔗 Connection Test':
@@ -388,6 +297,24 @@ class SnowflakeDashboard:
             self._show_analytics()
         elif current_page == '🛠️ Query Builder':
             self._show_query_builder()
+        
+        # Enhanced Analytics Hub Pages
+        elif current_page == '👨‍💻 Builder Analytics':
+            self._show_builder_analytics()
+        elif current_page == '🔄 Flow Analytics':
+            self._show_advanced_flow_analytics()
+        elif current_page == '💫 Bubble Analytics':
+            self._show_bubble_analytics()
+        elif current_page == '📋 Template Analytics':
+            self._show_template_analytics()
+        elif current_page == '📊 Usage Analytics':
+            self._show_usage_analytics()
+        elif current_page == '🎫 License Analytics':
+            self._show_license_analytics()
+        elif current_page == '🔌 Connection Analytics':
+            self._show_connection_analytics()
+        elif current_page == '📈 Performance Analytics':
+            self._show_performance_analytics()
         
         # Developer & QA Hub Pages
         elif current_page == '🏗️ System Architecture':
@@ -417,7 +344,7 @@ class SnowflakeDashboard:
         elif current_page == '🔄 Health Checks':
             self._show_system_health()
         
-        # Default to Executive Dashboard
+        # Default to Customer Data Analytics
         else:
             self._show_executive_dashboard()
     
@@ -442,7 +369,7 @@ class SnowflakeDashboard:
             st.markdown("""
             <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 1rem;">
                 <h2 style="color: white; margin: 0;">🚀 E2E Console</h2>
-                <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Professional Analytics Hub</p>
+                <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Customer Data Analytics</p>
             </div>
             """, unsafe_allow_html=True)
             
@@ -450,12 +377,26 @@ class SnowflakeDashboard:
             st.markdown("## 📊 Core Analytics")
             
             core_pages = [
-                "📈 Executive Dashboard",
+                "📊 Customer Data Analytics",
                 "🔗 Connection Test", 
                 "👥 Customer Configurations",
                 "🔍 Customer Details",
                 "📊 Advanced Analytics",
                 "🛠️ Query Builder"
+            ]
+            
+            # Enhanced Analytics Hub
+            st.markdown("## 🎯 Analytics Hub")
+            
+            analytics_pages = [
+                "👨‍💻 Builder Analytics",
+                "🔄 Flow Analytics", 
+                "💫 Bubble Analytics",
+                "📋 Template Analytics",
+                "📊 Usage Analytics",
+                "🎫 License Analytics",
+                "🔌 Connection Analytics",
+                "📈 Performance Analytics"
             ]
             
             # Developer & QA focused pages
@@ -482,7 +423,7 @@ class SnowflakeDashboard:
                 "🔄 Health Checks"
             ]
             
-            all_pages = core_pages + dev_qa_pages + monitoring_pages
+            all_pages = core_pages + analytics_pages + dev_qa_pages + monitoring_pages
             
             selected_page = st.selectbox("Navigate to:", all_pages, key="page_selector")
             st.session_state.current_page = selected_page
@@ -1663,27 +1604,33 @@ class SnowflakeDashboard:
     
     def _show_sample_queries(self):
         """Show sample SQL queries"""
-        samples = {
-            "Customer Count by Status": """
+        
+        # Create tabs for different query categories
+        tab1, tab2 = st.tabs(["📊 Customer Analytics", "🚨 Anomaly Analysis"])
+        
+        with tab1:
+            st.markdown("### Customer & Configuration Queries")
+            samples = {
+                "Customer Count by Status": """
 SELECT STATUS, COUNT(*) as customer_count
 FROM CUSTOMER_DETAILS
 GROUP BY STATUS
 ORDER BY customer_count DESC;
-            """,
-            "Recent Configurations": """
+                """,
+                "Recent Configurations": """
 SELECT CUSTOMER_NAME, CONFIGURATION_TYPE, UPDATED_DATE
 FROM CUSTOMER_CONFIGURATIONS
 WHERE UPDATED_DATE >= CURRENT_DATE - 30
 ORDER BY UPDATED_DATE DESC
 LIMIT 10;
-            """,
-            "Customer Distribution by Region": """
+                """,
+                "Customer Distribution by Region": """
 SELECT REGION, COUNT(*) as customer_count
 FROM CUSTOMER_CONFIGURATIONS
 GROUP BY REGION
 ORDER BY customer_count DESC;
-            """,
-            "Top Customers by Configuration Count": """
+                """,
+                "Top Customers by Configuration Count": """
 SELECT 
     cd.CUSTOMER_NAME,
     COUNT(cc.CONFIGURATION_TYPE) as config_count
@@ -1692,15 +1639,150 @@ LEFT JOIN CUSTOMER_CONFIGURATIONS cc ON cd.CUSTOMER_ID = cc.CUSTOMER_ID
 GROUP BY cd.CUSTOMER_NAME
 ORDER BY config_count DESC
 LIMIT 5;
-            """
-        }
+                """
+            }
+            
+            for title, sql in samples.items():
+                with st.expander(f"📄 {title}"):
+                    st.code(sql, language="sql")
+                    if st.button(f"Use this query", key=f"use_{title}"):
+                        st.session_state.sample_query = sql
+                        st.rerun()
         
-        for title, sql in samples.items():
-            with st.expander(f"📄 {title}"):
-                st.code(sql, language="sql")
-                if st.button(f"Use this query", key=f"use_{title}"):
-                    st.session_state.sample_query = sql
-                    st.rerun()
+        with tab2:
+            st.markdown("### 🚨 Anomaly Detection & System Analysis")
+            
+            anomaly_queries = {
+                "All Anomaly Events": """
+select * from influxdb.anomaly_events;
+                """,
+                "Export-Connection Count Analysis": """
+select count(*) from exports e, connections c where e._connectionid = c._id;
+                """,
+                "Specific Export Details": """
+select * from exports where _id='65f82f8442e4f1001ab69988';
+                """,
+                "Connection Details by ID": """
+select * from connections where _id='6269653089c88767812813a2';
+                """,
+                "All Connections": """
+select * from connections;
+                """,
+                "Apps Alphabetically": """
+select distinct app from connections order by app asc;
+                """,
+                "App-Based Anomaly Filtering": """
+-- app based filtering
+select c.app, ae.*
+from influxdb.anomaly_events ae
+left outer join mongodb.imports i on ae.exp_or_imp_id=i._id
+left outer join mongodb.exports e on ae.exp_or_imp_id=e._id
+inner join mongodb.connections c on (c._id=i._connectionid or c._id=e._connectionid);
+                """,
+                "New Anomalies Post-Deployment": """
+-- New anomalies post a deployment or some event we want to track
+select * 
+from influxdb.anomaly_events ae 
+where ae.time > '2024-04-22 00:00:00.000'
+and not exists (
+    select 1 
+    from 
+    influxdb.anomaly_events ae1 
+    where ae1.uid=ae.uid 
+    and ae1.time < '2024-04-22 00:00:00.000' 
+    and ae1.time > '2024-03-22 00:00:00.000');
+                """,
+                "Sudden Spike in Anomalies": """
+-- Sudden spike in anomalies detection
+select key_value_pair.value,
+SUM(CASE WHEN u.microservices[key_value_pair.value] = true THEN 1 ELSE 0 END) AS bubble_count
+from influxdb.anomaly_events ae 
+left outer join mongodb.imports i on ae.exp_or_imp_id=i._id
+left outer join mongodb.exports e on ae.exp_or_imp_id=e._id
+inner join mongodb.connections c on (c._id=i._connectionid or c._id=e._connectionid)
+inner join mongodb.users u on ae.uid=u._id,
+LATERAL FLATTEN(INPUT => OBJECT_KEYS(u.microservices)) AS key_value_pair
+where ae.time > '2024-05-13 18:45:54.975' and POSITION(LOWER(c.type) IN LOWER(key_value_pair.value)) > 0
+and not exists (
+    select 1 
+    from 
+    influxdb.anomaly_events ae1 
+    where ae1.uid=ae.uid 
+    and ae1.time < '2024-05-13 18:45:54.975' 
+    and ae1.time > '2024-03-24 23:00:00.000')
+GROUP BY key_value_pair.value;
+                """,
+                "Microservices Anomaly Analysis": """
+-- Detailed microservices anomaly analysis
+select key_value_pair.value,
+ae.uid,
+ae.flow_id,
+ae.exp_or_imp_id,
+c.type,
+ae.details:anomalyVariable
+from influxdb.anomaly_events ae
+left outer join mongodb.imports i on ae.exp_or_imp_id=i._id
+left outer join mongodb.exports e on ae.exp_or_imp_id=e._id
+inner join mongodb.connections c on (c._id=i._connectionid or c._id=e._connectionid)
+inner join mongodb.users u on ae.uid=u._id,
+LATERAL FLATTEN(INPUT => OBJECT_KEYS(u.microservices)) AS key_value_pair
+where ae.time > '2024-05-14 18:45:54.975' and POSITION(LOWER(c.type) IN LOWER(key_value_pair.value)) > 0
+and not exists (
+    select 1 
+    from 
+    influxdb.anomaly_events ae1 
+    where ae1.uid=ae.uid 
+    and ae1.time < '2024-05-14 18:45:54.975' 
+    and ae1.time > '2024-05-14 18:45:54.975')
+and u.microservices[key_value_pair.value] = true;
+                """,
+                "User Anomaly Events": """
+select * from influxdb.anomaly_events where uid IN ('6390aa56efa6681af404d2f5') ORDER BY time desc;
+                """,
+                "Adaptor Type by Export ID": """
+select adaptortype from mongodb.exports where _id IN ('659971774a8a253c1cf1a8a0');
+                """,
+                "Adaptor Type by Import ID": """
+select adaptortype from mongodb.imports where _id IN ('659971774a8a253c1cf1a8a0');
+                """,
+                "HTTP Microservice Analysis": """
+-- HTTP microservice specific anomaly analysis
+select key_value_pair.value,
+ae.uid,
+ae.flow_id,
+ae.exp_or_imp_id,
+c.type,
+ae.details:anomalyVariable,
+c.app,c.http:baseURI
+from influxdb.anomaly_events ae
+left outer join mongodb.imports i on ae.exp_or_imp_id=i._id
+left outer join mongodb.exports e on ae.exp_or_imp_id=e._id
+inner join mongodb.connections c on (c._id=i._connectionid or c._id=e._connectionid)
+inner join mongodb.users u on ae.uid=u._id,
+LATERAL FLATTEN(INPUT => OBJECT_KEYS(u.microservices)) AS key_value_pair
+where POSITION(LOWER(c.type) IN LOWER(key_value_pair.value)) > 0
+and u.microservices[key_value_pair.value] = true and key_value_pair.value='enableHttp' and ae.time>'2024-04-23 18:45:54.975' and u.subdomain='eu';
+                """,
+                "Salesforce SOQL Queries": """
+select distinct salesforce:soql:query from exports where adaptortype = 'SalesforceExport' and type != 'distributed' limit 100;
+                """,
+                "MS Rollout Audit": """
+select * from mongodb.ms_rollout_audit limit 10;
+                """,
+                "Recent Anomaly Events": """
+select * from influxdb.anomaly_events limit 10;
+                """,
+                "API Anomaly Events": """
+select * from influxdb.api_anomaly_events order by time desc limit 10;
+                """
+            }
+            
+            for title, sql in anomaly_queries.items():
+                with st.expander(f"🔍 {title}"):
+                    st.code(sql, language="sql")
+                    if st.button(f"Use this query", key=f"use_anomaly_{title}"):
+                        st.session_state.sample_query = sql
+                        st.rerun()
     
     # Chart helper methods
     def _show_customer_status_chart(self):
@@ -2432,11 +2514,11 @@ LIMIT 5;
                 st.write(f"{goal['current']:,.1f} / {goal['target']:,.0f} {goal['unit']}")
     
     def _show_executive_dashboard(self):
-        """Enhanced executive dashboard with professional UI"""
+        """Enhanced customer data analytics with ultra-modern UI"""
         st.markdown("""
         <div class="main-header">
-            <div class="header-title">📈 Executive Dashboard</div>
-            <div class="header-subtitle">Real-time Analytics & Business Intelligence</div>
+            <div class="header-title">📊 Customer Data Analytics</div>
+            <div class="header-subtitle">Advanced Business Intelligence & Real-time Analytics</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -2563,6 +2645,488 @@ LIMIT 5;
             st.slider("CPU Alert Threshold", 0, 100, 80, help="Alert when CPU usage exceeds this %")
             st.slider("Memory Alert Threshold", 0, 100, 85, help="Alert when memory usage exceeds this %")
             st.slider("Response Time Alert (ms)", 0, 1000, 500, help="Alert when response time exceeds this value")
+
+    def _show_builder_analytics(self):
+        """Comprehensive builder analytics dashboard"""
+        st.markdown("""
+        <div class="main-header">
+            <div class="header-title">👨‍💻 Builder Analytics</div>
+            <div class="header-subtitle">Comprehensive Builder Activity & Performance Analysis</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Enhanced CSS for glassmorphism and animations
+        st.markdown("""
+        <style>
+        .analytics-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .analytics-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(31, 38, 135, 0.5);
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        # Builder Analytics Tabs
+        tab1, tab2, tab3, tab4 = st.tabs(["🏗️ Builder Overview", "🌐 Domain Analysis", "🎓 Certifications", "📊 Performance"])
+        
+        with tab1:
+            st.subheader("🏗️ All Builders Analysis")
+            
+            if self.has_connector:
+                # SQL Query for all builders
+                builders_query = """
+                select name, email, role, count(email) as num_flow_steps_created, _userId from 
+                (select distinct _resourceId, _byUserId from audits where source = 'ui' and event = 'create' and resourcetype in ('import', 'export') and time > current_date - 90) as a
+                inner join (select exp_or_imp_id, sum(stat_count) as success_count from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 90 group by exp_or_imp_id) as active on a._resourceId=active.exp_or_imp_id
+                left join (select _id, name as import_name from imports) as i on a._resourceId = i._id
+                left join (select _id, name as export_name from exports) as e on a._resourceId = e._id
+                inner join (select _id as _userId, name, email, role, emailDomain from users) as u on a._byUserId = u._userId
+                group by name, email, role, _userId
+                order by num_flow_steps_created desc
+                """
+                
+                if st.button("🔍 Analyze All Builders", type="primary"):
+                    with st.spinner("Analyzing builder data..."):
+                        try:
+                            df = self.connector.execute_query(builders_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {len(df)} active builders")
+                                
+                                # Key metrics
+                                col1, col2, col3, col4 = st.columns(4)
+                                with col1:
+                                    st.markdown('<div class="metric-card"><h3>Total Builders</h3><h2>' + str(len(df)) + '</h2></div>', unsafe_allow_html=True)
+                                with col2:
+                                    avg_flows = df['NUM_FLOW_STEPS_CREATED'].mean()
+                                    st.markdown(f'<div class="metric-card"><h3>Avg Flows/Builder</h3><h2>{avg_flows:.1f}</h2></div>', unsafe_allow_html=True)
+                                with col3:
+                                    top_builder = df.iloc[0]['NUM_FLOW_STEPS_CREATED']
+                                    st.markdown(f'<div class="metric-card"><h3>Top Builder Flows</h3><h2>{top_builder}</h2></div>', unsafe_allow_html=True)
+                                with col4:
+                                    unique_domains = df['EMAIL'].str.split('@').str[1].nunique()
+                                    st.markdown(f'<div class="metric-card"><h3>Active Domains</h3><h2>{unique_domains}</h2></div>', unsafe_allow_html=True)
+                                
+                                # Top builders chart
+                                top_10 = df.head(10)
+                                fig = px.bar(top_10, x='NUM_FLOW_STEPS_CREATED', y='NAME', 
+                                           orientation='h', title='🏆 Top 10 Builders by Flow Creation')
+                                fig.update_traces(marker_color='rgba(102, 126, 234, 0.8)')
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                # Detailed table
+                                st.markdown("### 📋 Detailed Builder Information")
+                                st.dataframe(df, use_container_width=True)
+                                
+                            else:
+                                st.warning("No builder data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view real builder analytics")
+                
+        with tab2:
+            st.subheader("🌐 Builders per Domain Analysis")
+            
+            if self.has_connector:
+                # SQL Query for builders per domain
+                domain_query = """
+                select emailDomain, count(emailDomain) as num_builders from
+                (select emailDomain, email, count(email) as num_flow_steps_created from 
+                (select distinct _resourceId, _byUserId from audits where source = 'ui' and event = 'create' and resourcetype in ('import', 'export') and time > current_date - 90) as a
+                inner join (select exp_or_imp_id, sum(stat_count) as success_count from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 90  group by exp_or_imp_id) as active on a._resourceId=active.exp_or_imp_id
+                left join (select _id, name as import_name from imports) as i on a._resourceId = i._id
+                left join (select _id, name as export_name from exports) as e on a._resourceId = e._id
+                inner join (select _id as _userId, name, email, emailDomain from users) as u on a._byUserId = u._userId
+                group by emailDomain, email
+                order by emailDomain asc)
+                group by emailDomain
+                order by num_builders desc
+                """
+                
+                if st.button("🌐 Analyze Domain Distribution", type="primary"):
+                    with st.spinner("Analyzing domain data..."):
+                        try:
+                            df = self.connector.execute_query(domain_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {len(df)} active domains")
+                                
+                                # Domain distribution pie chart
+                                fig = px.pie(df, values='NUM_BUILDERS', names='EMAILDOMAIN', 
+                                           title='🌐 Builder Distribution by Domain')
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                # Top domains bar chart
+                                top_domains = df.head(15)
+                                fig2 = px.bar(top_domains, x='EMAILDOMAIN', y='NUM_BUILDERS',
+                                            title='🏢 Top 15 Domains by Builder Count')
+                                fig2.update_traces(marker_color='rgba(118, 75, 162, 0.8)')
+                                st.plotly_chart(fig2, use_container_width=True)
+                                
+                                # Domain details table
+                                st.markdown("### 📊 Domain Builder Statistics")
+                                st.dataframe(df, use_container_width=True)
+                                
+                            else:
+                                st.warning("No domain data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view domain analytics")
+                
+        with tab3:
+            st.subheader("🎓 Builder Certifications & Quadrant Analysis")
+            
+            if self.has_connector:
+                # SQL Query for builders with certifications
+                certification_query = """
+                select emailDomain, email, count(email) as num_flow_steps_created, IFNULL(num_certifications, 0) as num_certifications, QUAD_BASED_ON_LOB, _ownerUserId from 
+                (select distinct _resourceId, _byUserId, _userId as _ownerUserId from audits where source = 'ui' and event = 'create' and resourcetype in ('import', 'export') and time > current_date - 90) as a
+                inner join (select exp_or_imp_id, sum(stat_count) as success_count from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 90  group by exp_or_imp_id) as active on a._resourceId=active.exp_or_imp_id
+                left join (select _id, name as import_name from imports) as i on a._resourceId = i._id
+                left join (select _id, name as export_name from exports) as e on a._resourceId = e._id
+                inner join (select _id as _userId, name, email, emailDomain from users) as u on a._byUserId = u._userId
+                left join (select email as litmos_email, io_user_id, count(io_user_id) as num_certifications from 
+                (select user_id, course_id, title, type from litmos.certification) as certification
+                inner join (select course_id, active, name as litmos_course_name from litmos.course) as course on certification.course_id=course.course_id
+                inner join (select user_id, custom_field9 as io_user_id, email from litmos.user) as litmos_user on certification.user_id=litmos_user.user_id
+                group by email, io_user_id
+                order by num_certifications desc) as litmos on u._userId = litmos.io_user_id
+                left join (select IO_ID, QUAD_BASED_ON_LOB from 
+                (select NS_CUSTOMER_ID, IO_ID from netsuite.customer_ids) as customer_id
+                inner join (select NS_CUSTOMER_ID, QUAD_BASED_ON_LOB, month from ANALYTICS.COMPANY.CORE_ARR_BUILDUP where month >= current_date - 90) as core_arr_buildup on customer_id.NS_CUSTOMER_ID = core_arr_buildup.NS_CUSTOMER_ID) as quad on a._ownerUserId = quad.IO_ID
+                group by emailDomain, email, _userId, _ownerUserId, num_certifications, QUAD_BASED_ON_LOB
+                order by num_flow_steps_created desc
+                """
+                
+                if st.button("🎓 Analyze Certifications", type="primary"):
+                    with st.spinner("Analyzing certification data..."):
+                        try:
+                            df = self.connector.execute_query(certification_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {len(df)} builders with certification data")
+                                
+                                # Certification metrics
+                                certified_builders = df[df['NUM_CERTIFICATIONS'] > 0]
+                                col1, col2, col3 = st.columns(3)
+                                with col1:
+                                    cert_rate = len(certified_builders) / len(df) * 100
+                                    st.markdown(f'<div class="metric-card"><h3>Certification Rate</h3><h2>{cert_rate:.1f}%</h2></div>', unsafe_allow_html=True)
+                                with col2:
+                                    avg_certs = certified_builders['NUM_CERTIFICATIONS'].mean() if len(certified_builders) > 0 else 0
+                                    st.markdown(f'<div class="metric-card"><h3>Avg Certs/Builder</h3><h2>{avg_certs:.1f}</h2></div>', unsafe_allow_html=True)
+                                with col3:
+                                    max_certs = df['NUM_CERTIFICATIONS'].max()
+                                    st.markdown(f'<div class="metric-card"><h3>Max Certifications</h3><h2>{max_certs}</h2></div>', unsafe_allow_html=True)
+                                
+                                # Certification vs Flow Creation scatter plot
+                                fig = px.scatter(df, x='NUM_CERTIFICATIONS', y='NUM_FLOW_STEPS_CREATED',
+                                               hover_data=['EMAIL', 'EMAILDOMAIN'],
+                                               title='🎯 Certifications vs Flow Creation Activity')
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                # Quadrant analysis if available
+                                if 'QUAD_BASED_ON_LOB' in df.columns:
+                                    quad_data = df.dropna(subset=['QUAD_BASED_ON_LOB'])
+                                    if not quad_data.empty:
+                                        fig2 = px.bar(quad_data.groupby('QUAD_BASED_ON_LOB').size().reset_index(name='count'),
+                                                    x='QUAD_BASED_ON_LOB', y='count',
+                                                    title='📊 Builder Distribution by Business Quadrant')
+                                        st.plotly_chart(fig2, use_container_width=True)
+                                
+                                # Detailed certification table
+                                st.markdown("### 🏆 Builder Certification Details")
+                                st.dataframe(df[['EMAIL', 'EMAILDOMAIN', 'NUM_FLOW_STEPS_CREATED', 'NUM_CERTIFICATIONS', 'QUAD_BASED_ON_LOB']], use_container_width=True)
+                                
+                            else:
+                                st.warning("No certification data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view certification analytics")
+                
+        with tab4:
+            st.subheader("📊 Builder Performance Metrics")
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("### 🎯 Performance Indicators")
+                
+                # Mock performance data for visualization
+                perf_metrics = {
+                    'Metric': ['Avg Flows/Month', 'Success Rate', 'Complexity Score', 'Collaboration Index'],
+                    'Value': [12.5, 94.2, 7.8, 8.3],
+                    'Target': [15.0, 95.0, 8.0, 9.0]
+                }
+                
+                for i, metric in enumerate(perf_metrics['Metric']):
+                    progress = min(perf_metrics['Value'][i] / perf_metrics['Target'][i], 1.0)
+                    st.metric(metric, f"{perf_metrics['Value'][i]}", f"Target: {perf_metrics['Target'][i]}")
+                    st.progress(progress)
+            
+            with col2:
+                st.markdown("### 📈 Builder Activity Trends")
+                
+                # Mock trend data
+                dates = pd.date_range(start='2024-01-01', end='2024-01-15', freq='D')
+                activity = np.random.poisson(25, len(dates))
+                
+                fig = px.line(x=dates, y=activity, title='Daily Builder Activity')
+                fig.update_traces(line_color='rgba(102, 126, 234, 0.8)')
+                st.plotly_chart(fig, use_container_width=True)
+
+    def _show_bubble_analytics(self):
+        """Comprehensive bubble analytics dashboard"""
+        st.markdown("""
+        <div class="main-header">
+            <div class="header-title">💫 Bubble Analytics</div>
+            <div class="header-subtitle">Advanced Bubble Activity & Performance Analysis</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Bubble Analytics Tabs
+        tab1, tab2, tab3, tab4 = st.tabs(["🆕 New Bubbles", "🏃 Running Bubbles", "👥 User Activity", "📊 App Analysis"])
+        
+        with tab1:
+            st.subheader("🆕 New Unmanaged Bubbles Analysis")
+            
+            if self.has_connector:
+                # SQL Query for new unmanaged bubbles grouped by app
+                new_bubbles_query = """
+                select app, count(distinct b._id) as total_bubbles from (
+                select _id, TO_VARIANT('data_loader') as app, _userid, createdat, _connectorid from exports where type = 'simple'
+                union
+                select _id, webhook:provider as app, _userid, createdat, _connectorid from exports where type = 'webhook'
+                union (
+                select _id, coalesce(http_connector_name, con.app) as app, _userid, createdat, _connectorid from (
+                select _id, _userid, _connectionid, createdat, _connectorid from exports where ((type != 'simple' and type != 'webhook') or type is null)
+                union
+                select _id, _userid, _connectionid, createdat, _connectorid from imports
+                ) as bubble
+                inner join (
+                select connections._id as connection_id, connections.app, http_connectors.name as http_connector_name
+                from connections 
+                left join http_connectors on connections.http:_httpConnectorId = http_connectors._id) as con on bubble._connectionid=con.connection_id)) as b
+                inner join (select _id, emaildomain from users where emaildomain != 'celigo.com') as non_celigo_user on b._userid = non_celigo_user._id
+                where b._connectorid is null and createdat >= current_date - 90 and not exists (
+                select 1 from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 30 and exp_or_imp_id = b._id)
+                group by app
+                order by total_bubbles desc
+                """
+                
+                if st.button("🆕 Analyze New Bubbles", type="primary"):
+                    with st.spinner("Analyzing new bubble data..."):
+                        try:
+                            df = self.connector.execute_query(new_bubbles_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {df['TOTAL_BUBBLES'].sum()} new unmanaged bubbles across {len(df)} applications")
+                                
+                                # Key metrics
+                                col1, col2, col3, col4 = st.columns(4)
+                                with col1:
+                                    st.metric("Total New Bubbles", df['TOTAL_BUBBLES'].sum())
+                                with col2:
+                                    st.metric("Applications", len(df))
+                                with col3:
+                                    top_app_bubbles = df.iloc[0]['TOTAL_BUBBLES']
+                                    st.metric("Top App Bubbles", top_app_bubbles)
+                                with col4:
+                                    avg_bubbles = df['TOTAL_BUBBLES'].mean()
+                                    st.metric("Avg Bubbles/App", f"{avg_bubbles:.1f}")
+                                
+                                # New bubbles by app chart
+                                fig = px.bar(df.head(15), x='APP', y='TOTAL_BUBBLES',
+                                           title='🆕 New Unmanaged Bubbles by Application (Last 90 Days)')
+                                fig.update_traces(marker_color='rgba(255, 193, 7, 0.8)')
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                # Pie chart for distribution
+                                fig2 = px.pie(df, values='TOTAL_BUBBLES', names='APP',
+                                            title='📊 New Bubble Distribution by App')
+                                st.plotly_chart(fig2, use_container_width=True)
+                                
+                                # Detailed table
+                                st.markdown("### 📋 New Bubble Details by Application")
+                                st.dataframe(df, use_container_width=True)
+                                
+                            else:
+                                st.warning("No new bubble data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view new bubble analytics")
+                
+        with tab2:
+            st.subheader("🏃 Running Unmanaged Bubbles Analysis")
+            
+            if self.has_connector:
+                # SQL Query for running unmanaged bubbles
+                running_bubbles_query = """
+                select app, count(distinct b._id) as total_bubbles from (
+                select _id, TO_VARIANT('data_loader') as app, _userid, createdat, _connectorid from exports where type = 'simple'
+                union
+                select _id, webhook:provider as app, _userid, createdat, _connectorid from exports where type = 'webhook'
+                union (
+                select _id, coalesce(http_connector_name, con.app) as app, _userid, createdat, _connectorid from (
+                select _id, _userid, _connectionid, createdat, _connectorid from exports where ((type != 'simple' and type != 'webhook') or type is null)
+                union
+                select _id, _userid, _connectionid, createdat, _connectorid from imports
+                ) as bubble
+                inner join (
+                select connections._id as connection_id, connections.app, http_connectors.name as http_connector_name
+                from connections 
+                left join http_connectors on connections.http:_httpConnectorId = http_connectors._id) as con on bubble._connectionid=con.connection_id)) as b
+                inner join (select _id, emaildomain from users where emaildomain != 'celigo.com') as non_celigo_user on b._userid = non_celigo_user._id
+                where b._connectorid is null and exists (
+                select 1 from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 30 and exp_or_imp_id = b._id)
+                group by app
+                order by total_bubbles desc
+                """
+                
+                if st.button("🏃 Analyze Running Bubbles", type="primary"):
+                    with st.spinner("Analyzing running bubble data..."):
+                        try:
+                            df = self.connector.execute_query(running_bubbles_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {df['TOTAL_BUBBLES'].sum()} running unmanaged bubbles")
+                                
+                                # Running bubbles metrics
+                                col1, col2, col3 = st.columns(3)
+                                with col1:
+                                    st.metric("Total Running", df['TOTAL_BUBBLES'].sum())
+                                with col2:
+                                    st.metric("Active Apps", len(df))
+                                with col3:
+                                    utilization = (df['TOTAL_BUBBLES'].sum() / (df['TOTAL_BUBBLES'].sum() + 100)) * 100  # Mock calculation
+                                    st.metric("Utilization Rate", f"{utilization:.1f}%")
+                                
+                                # Running bubbles chart
+                                fig = px.bar(df, x='APP', y='TOTAL_BUBBLES',
+                                           title='🏃 Running Unmanaged Bubbles by Application')
+                                fig.update_traces(marker_color='rgba(40, 167, 69, 0.8)')
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                st.dataframe(df, use_container_width=True)
+                                
+                            else:
+                                st.warning("No running bubble data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view running bubble analytics")
+                
+        with tab3:
+            st.subheader("👥 Users Building New Bubbles")
+            
+            if self.has_connector:
+                # SQL Query for users building new bubbles
+                users_new_bubbles_query = """
+                select app, count(distinct _userid) as total_users from (
+                select _id, TO_VARIANT('data_loader') as app, _userid, createdat, _connectorid from exports where type = 'simple'
+                union
+                select _id, webhook:provider as app, _userid, createdat, _connectorid from exports where type = 'webhook'
+                union (
+                select _id, coalesce(http_connector_name, con.app) as app, _userid, createdat, _connectorid from (
+                select _id, _userid, _connectionid, createdat, _connectorid from exports where ((type != 'simple' and type != 'webhook') or type is null)
+                union
+                select _id, _userid, _connectionid, createdat, _connectorid from imports
+                ) as bubble
+                inner join (
+                select connections._id as connection_id, connections.app, http_connectors.name as http_connector_name
+                from connections 
+                left join http_connectors on connections.http:_httpConnectorId = http_connectors._id) as con on bubble._connectionid=con.connection_id)) as b
+                inner join (select _id, emaildomain from users where emaildomain != 'celigo.com') as non_celigo_user on b._userid = non_celigo_user._id
+                where b._connectorid is null and createdat >= current_date - 90 and not exists (
+                select 1 from influxdb.usage_stats where stat_type = 's' and end_date > current_date - 30 and exp_or_imp_id = b._id)
+                group by app
+                order by total_users desc
+                """
+                
+                if st.button("👥 Analyze User Activity", type="primary"):
+                    with st.spinner("Analyzing user bubble activity..."):
+                        try:
+                            df = self.connector.execute_query(users_new_bubbles_query)
+                            if df is not None and not df.empty:
+                                st.success(f"✅ Found {df['TOTAL_USERS'].sum()} users building new bubbles")
+                                
+                                # User activity metrics
+                                col1, col2, col3 = st.columns(3)
+                                with col1:
+                                    st.metric("Active Users", df['TOTAL_USERS'].sum())
+                                with col2:
+                                    st.metric("Apps Used", len(df))
+                                with col3:
+                                    avg_users = df['TOTAL_USERS'].mean()
+                                    st.metric("Avg Users/App", f"{avg_users:.1f}")
+                                
+                                # Users building bubbles chart
+                                fig = px.bar(df, x='APP', y='TOTAL_USERS',
+                                           title='👥 Users Building New Unmanaged Bubbles by App')
+                                fig.update_traces(marker_color='rgba(220, 53, 69, 0.8)')
+                                fig.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                st.dataframe(df, use_container_width=True)
+                                
+                            else:
+                                st.warning("No user bubble activity data found")
+                        except Exception as e:
+                            st.error(f"❌ Query failed: {str(e)}")
+            else:
+                st.info("🔧 Connect to Snowflake to view user bubble analytics")
+                
+        with tab4:
+            st.subheader("📊 Application Analysis")
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("### 🎯 Bubble Health Indicators")
+                
+                # Mock bubble health metrics
+                health_metrics = {
+                    'Active Bubbles': 2847,
+                    'Success Rate': '94.2%',
+                    'Avg Daily Runs': 156,
+                    'Error Rate': '0.8%'
+                }
+                
+                for metric, value in health_metrics.items():
+                    st.metric(metric, value)
+            
+            with col2:
+                st.markdown("### 📈 Bubble Activity Trends")
+                
+                # Mock bubble trend data
+                dates = pd.date_range(start='2024-01-01', end='2024-01-15', freq='D')
+                bubble_activity = np.random.poisson(50, len(dates))
+                
+                fig = px.area(x=dates, y=bubble_activity, 
+                            title='Daily Bubble Activity Trend')
+                fig.update_traces(fill='tonexty', line_color='rgba(255, 193, 7, 0.8)')
+                st.plotly_chart(fig, use_container_width=True)
 
 
 def main():

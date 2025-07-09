@@ -2,8 +2,14 @@ streamlit==1.29.0
 snowflake-connector-python==3.6.0
 pandas==2.1.4
 plotly==5.17.0
-# Google OAuth dependencies removed - using simple authentication
-# streamlit-authenticator==0.2.3  # Removed - using custom simple auth
+# Professional UI/UX enhancements
+streamlit-lottie==0.0.5
+streamlit-elements==0.1.0
+streamlit-extras==0.3.5
+streamlit-option-menu==0.3.6
+streamlit-card==0.0.61
+streamlit-aggrid==0.3.4.post3
+# Core data science libraries
 python-dotenv==1.0.0
 altair==5.2.0
 numpy==1.24.3
@@ -11,4 +17,8 @@ openpyxl==3.1.2
 networkx>=2.8.8
 scikit-learn>=1.3.0
 scipy>=1.11.0
-datetime 
+datetime
+# Additional professional dependencies
+bokeh>=3.0.0
+seaborn>=0.12.0
+matplotlib>=3.7.0 
