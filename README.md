@@ -1,4 +1,4 @@
-![Screenshot 2025-06-30 at 3 33 51 PM](https://github.com/user-attachments/assets/162d469d-55ba-4be7-9f20-811d34d2521b)# Snowflake Analytics Dashboard
+# Snowflake Analytics Dashboard
 
 A comprehensive Streamlit-based analytics dashboard for real-time Snowflake data analysis with Google OAuth authentication, featuring production-ready queries and advanced visualizations.
 
